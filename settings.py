@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'me'
 SITENAME = u'oreki.moe'
-SITEURL = u'oreki.moe'
+SITEURL = u'http://oreki.moe'
 
 PATH = 'content'
 
