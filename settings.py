@@ -10,7 +10,7 @@ PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
 
-DEFAULT_LANG = u'ch'
+DEFAULT_LANG = u'zh_cn'
 
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None

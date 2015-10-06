@@ -4,6 +4,7 @@ branches:
   - master
 install:
 - pip install pelican
+- pip install markdown
 - pip install ghp-import
 script:
 - make publish
