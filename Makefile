@@ -7,6 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/settings.py
 PUBLISHCONF=$(BASEDIR)/settings.py
+THEME_SVBHACK_URL=https://github.com/gfidente/pelican-svbhack
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -120,6 +121,7 @@ cf_upload: publish
 github: publish
 ifeq ($(TRAVIS_PULL_REQUEST), false)
 	ghp-import -n $(OUTPUTDIR)
+	git clone --depth 1 $(THEME_SVBHACK_URL)
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
 endif
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
