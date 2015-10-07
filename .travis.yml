@@ -6,6 +6,7 @@ install:
 - pip install pelican
 - pip install markdown
 - pip install ghp-import
+- sudo locale-gen zh_CN.UTF-8
 script:
 - make publish
 - 'make github 2> /dev/null'
