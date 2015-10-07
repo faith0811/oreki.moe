@@ -8,9 +8,10 @@ SITEURL = u'http://oreki.moe'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = u'zh_cn'
+DEFAULT_LANG = u'zh'
+LOCALE = u'zh_CN.utf-8'
 
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
