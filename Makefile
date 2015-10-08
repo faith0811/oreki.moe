@@ -7,7 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/settings.py
 PUBLISHCONF=$(BASEDIR)/settings.py
-THEME_SVBHACK_URL=https://github.com/gfidente/pelican-svbhack
+THEME_SVBHACK_URL=https://github.com/faith0811/pelican-svbhack
 
 FTP_HOST=localhost
 FTP_USER=anonymous
