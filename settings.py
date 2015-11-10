@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'折木 奉太郎'
+AUTHOR = u'yanqing.wang'
 SITENAME = u'oreki.moe'
 SITEURL = u'http://oreki.moe'
 
@@ -26,7 +26,7 @@ SOCIAL = (('Github', 'https://github.com/faith0811'),
 DEFAULT_PAGINATION = 10
 
 THEME = 'pelican-svbhack'
-TAGLINE = u'不做也行的事情就不做，非做不可的事情一切从简。'
+TAGLINE = u''
 USER_LOGO_URL = SITEURL + '/images/oreki.jpeg'
 
 STATIC_PATHS = ['images', 'extra/CNAME']

@@ -1,6 +1,6 @@
 Title: 今天参观了罗迪的博客
 Date: 2015-11-09 18:43:45
-Category: All
+Category: Life
 
 
 今天参观了罗迪的博客，还注册了一个账号，用户名oreki，密码1q2w3e4r。欢迎大家爆破。
