@@ -29,5 +29,7 @@ THEME = 'pelican-svbhack'
 TAGLINE = u''
 USER_LOGO_URL = SITEURL + '/images/oreki.jpeg'
 
+DISQUS_SITENAME = 'orekimoe'
+
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
