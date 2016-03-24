@@ -2,7 +2,7 @@ Title: 手把手教你如何滥用Github, Travis-ci, Coding等资源来建立一
 Date: 2016-03-18 17:42:23
 Category: UselessSkill
 
-**这个和一般的博客有什么区别**
+#### 这个和一般的博客有什么区别
 
 - 可以在任何地方在Github上写下Markdown语法的内容，然后就会自动编译成html并发布
 - 可以绑定自己的域名
@@ -12,13 +12,13 @@ Category: UselessSkill
 - 可以分国内外进入不同服务器，打开比较快，~~异地多活~~
 - 不要钱，不要钱，不要钱
 
-**demo地址**
+#### demo地址
 
 当然就是我的博客啦。。
 
 Github上的地址是：[戳我](https://github.com/faith0811/oreki.moe)
 
-**准备工作**
+#### 准备工作
 
 - 建一个Github账号，如果没有的话
 - 建一个Travis-ci账号，并与Github绑定，如果没有的话
@@ -27,7 +27,7 @@ Github上的地址是：[戳我](https://github.com/faith0811/oreki.moe)
 - 保证自己有Python, pip等工具（可选）
 - 准备一个域名（可选）
 
-**让我们开始吧**
+#### 让我们开始吧
 
 因为我的博客用了``pelican``，所以我就用他作为教程的一部分了。。如果你喜欢``hexo``之类的，只要替换掉这个部分的内容就行了。
 
@@ -226,6 +226,6 @@ env:
 
 push至coding的方法与github比较相似，在这里就不展开了。如果有问题可以看我blog的repo来参考。。
 
-**总结**
+#### 总结
 
 我已经写的很详细了。。好累啊
