@@ -30,6 +30,7 @@ TAGLINE = u''
 USER_LOGO_URL = SITEURL + '/images/oreki.jpeg'
 
 DISQUS_SITENAME = 'orekimoe'
+GOOGLE_ANALYTICS = 'UA-75598333-1'
 
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
