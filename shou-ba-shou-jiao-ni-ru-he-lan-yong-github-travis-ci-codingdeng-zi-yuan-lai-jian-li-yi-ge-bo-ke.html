@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="//oreki.moe/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="yanqing.wang">
+  <meta name="description" content="Posts and writings by yanqing.wang">
+
+
+<meta name="keywords" content="">
+
+  <title>
+    oreki.moe
+&ndash; 手把手教你如何滥用Github, Travis-ci, Coding等资源来建立一个博客  </title>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-75598333-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="//oreki.moe">
+	<img id="author_logo" src="" alt="logo">
+      </a>
+      <h2><a id="author_name" href="//oreki.moe"></a></h2>
+      <p id="author_tagline"></p>
+      <ul>
+        <li><a href="http://www.kyotoanimation.co.jp/kotenbu/" target="_blank">氷菓</a></li>
+        <li><a href="https://github.com/faith0811" target="_blank">Github</a></li>
+        <li><a href="https://twitter.com/wyq0811" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="//oreki.moe">Index</a> &brvbar; <a href="//oreki.moe/archives.html">Archives</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="//oreki.moe/shou-ba-shou-jiao-ni-ru-he-lan-yong-github-travis-ci-codingdeng-zi-yuan-lai-jian-li-yi-ge-bo-ke.html">手把手教你如何滥用Github, Travis-ci, Coding等资源来建立一个博客</a></h3>
+  </div>
+  <div class="article_text">
+    <h4>这个和一般的博客有什么区别</h4>
+<ul>
+<li>可以在任何地方在Github上写下Markdown语法的内容，然后就会自动编译成html并发布</li>
+<li>可以绑定自己的域名</li>
+<li>可以比较自由地改样式</li>
+<li>和别人家的不太一样，可以装逼</li>
+<li>静态页面打开比较快</li>
+<li>可以分国内外进入不同服务器，打开比较快，~~异地多活~~</li>
+<li>不要钱，不要钱，不要钱</li>
+</ul>
+<h4>demo地址</h4>
+<p>当然就是我的博客啦。。</p>
+<p>Github上的地址是：<a href="https://github.com/faith0811/oreki.moe">戳我</a></p>
+<h4>准备工作</h4>
+<ul>
+<li>建一个Github账号，如果没有的话</li>
+<li>建一个Travis-ci账号，并与Github绑定，如果没有的话</li>
+<li>安装travis的cli命令行工具（<code>sudo gem install travis</code>）</li>
+<li>建一个Coding账号，如果没有的话（可选）</li>
+<li>保证自己有Python, pip等工具（可选）</li>
+<li>准备一个域名（可选）</li>
+</ul>
+<h4>让我们开始吧</h4>
+<p>因为我的博客用了<code>pelican</code>，所以我就用他作为教程的一部分了。。如果你喜欢<code>hexo</code>之类的，只要替换掉这个部分的内容就行了。</p>
+<h4>第一步，本地安装pelican并且完成配置</h4>
+<p>一般来说，只要<code>pip install pelican markdown</code>就能搞定了。。</p>
+<p>如果不行的话，就<a href="http://docs.getpelican.com/en/3.6.3/install.html">戳我</a>来看官方的安装文档吧。。</p>
+<p>然后就依次执行</p>
+<div class="highlight"><pre><span></span>mkdir -p ~/projects/yoursite
+<span class="nb">cd</span> ~/projects/yoursite
+pelican-quickstart
+</pre></div>
+
+
+<p>注意把对应的目录名字改掉。。。</p>
+<p>然后就会有一个亲切的人机互动界面，你可以按照他的提示，把必要的信息填进去，填错也没关系，之后可以改</p>
+<p>然后你的目录大概看上去长这样</p>
+<div class="highlight"><pre><span></span>.
+├── Makefile
+├── content
+├── develop_server.sh
+├── fabfile.py
+├── output
+├── pelicanconf.py
+└── publishconf.py
+</pre></div>
+
+
+<p>然后，你可以在content文件夹内，加入你的第一篇博客，你可以这么写</p>
+<div class="highlight"><pre><span></span>Title: 呵呵
+Date: 2016-03-18 18:28:12
+Category: HEHE
+
+大家好我是博客主体内容。:)
+</pre></div>
+
+
+<p>然后保存为<code>hello_world.md</code>就行了。。</p>
+<p>再之后，你只要做<code>pelican content</code>就可以build出html页面并输出到<code>./output</code>下。</p>
+<p>你可以通过进入output目录，再使用pelican自带的服务器启动预览</p>
+<div class="highlight"><pre><span></span>python -m pelican.server
+</pre></div>
+
+
+<p>来看看成果吧。进入<code>http://localhost:8000</code>来访问。</p>
+<p>接下来你可以对你的博客进行各个角度的调整，例如增加插件啊，更换模板啊，更改名字啊等等。。</p>
+<h4>第二步 将源码push至Github</h4>
+<p>看到这里的时候，你需要保证你的博客已经能够顺利地build了</p>
+<p>现在，我们需要在Github上增加一个public的repo来储存你的博客的源码。</p>
+<p>创建repo的话，<a href="https://github.com/new">戳这里</a></p>
+<p>之后就将你刚才创建的源码加入git版本控制中</p>
+<div class="highlight"><pre><span></span>cd /path/to/your/blog/directory
+git init
+git remote add origin git@github.com:your_name/your_repo.git
+git push origin master
+</pre></div>
+
+
+<p>如果一切顺利，你的代码就被push到github上托管了。</p>
+<p>顺带一提的是，你的<code>output</code>文件夹内的内容其实是build生成的，应该被排除在版本控制之外。</p>
+<p>所以可以在<code>.gitignore</code>这个文件中添加<code>output/</code>来将整个文件夹去除。</p>
+<h4>第三步 开启github pages</h4>
+<p>Github Pages是Github的一个静态页面托管的服务。你可以将静态的html放在git的<code>gh-pages</code>分支。</p>
+<p>在push至github之后，他就会自动地将该分支内的内容发布至互联网上。</p>
+<p>这一步其实非常简单，我们使用一个插件来帮助我们完成这个动作。</p>
+<p>这个插件的名字叫<code>ghp-import</code></p>
+<p>可以通过pip来安装</p>
+<div class="highlight"><pre><span></span>pip install ghp-import
+</pre></div>
+
+
+<p>使用的话也很简单，只需要一行命令</p>
+<div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="n">output</span><span class="o">/</span>
+</pre></div>
+
+
+<p>这行命令会创建gh-pages分支，并填充指定的文件夹下的内容。</p>
+<p>再之后我们只需要push该分支至github就行</p>
+<div class="highlight"><pre><span></span>git checkout gh-pages
+git push origin gh-pages
+</pre></div>
+
+
+<p>然后，你就可以通过<code>http://your_name.github.io/your_repo</code>来访问你的博客了。</p>
+<p>关于怎么使用自己的域名，可以<a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">戳这里</a></p>
+<h4>第四步 使用travis-ci来构建博客</h4>
+<p>其实做到第三步，理论上你已经可以完整地使用你的博客了。</p>
+<p>但是，每次都要在cli下执行一坨命令来build博客再上传是不是很麻烦呢，而且也不支持在线编辑。</p>
+<p>所以我们需要一个第三方的平台来帮我们构建自己的博客。</p>
+<p>在这种情况下，提供开源免费服务的travis-ci就是首选了。</p>
+<p>核心的思路就是，每当任何代码被push至blog的master分支后，travis-ci帮我去做build以及push至对应repo的动作。</p>
+<p>那问题就来了，怎么让travis-ci拥有权限push代码到我的repo中呢？</p>
+<p>在这里，我们需要使用github的一个功能叫做person_access_token</p>
+<p>可以通过<a href="https://github.com/settings/tokens">戳这里</a>来添加token。</p>
+<p>只需要勾选public_repo的权限就可以了。。</p>
+<p>之后在Makefile中添加了github的方法以及在项目根目录中添加<code>.travis.yml</code>文件，来让travis-ci能够识别并正确执行build流程</p>
+<div class="highlight"><pre><span></span><span class="n">Makefile</span><span class="err">添加：</span>
+
+<span class="n">github</span><span class="p">:</span> <span class="n">publish</span>
+<span class="n">ifeq</span> <span class="p">(</span><span class="err">$</span><span class="p">(</span><span class="n">TRAVIS_PULL_REQUEST</span><span class="p">),</span> <span class="n">false</span><span class="p">)</span>
+        <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span>
+        <span class="nd">@git</span> <span class="n">push</span> <span class="o">-</span><span class="n">fq</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="p">{</span><span class="n">GH_TOKEN</span><span class="p">}</span><span class="nd">@github.com</span><span class="o">/</span><span class="err">$</span><span class="p">(</span><span class="n">TRAVIS_REPO_SLUG</span><span class="p">)</span><span class="o">.</span><span class="n">git</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="n">endif</span>
+
+<span class="o">.</span><span class="n">travis</span><span class="o">.</span><span class="n">yml</span><span class="err">文件添加：</span>
+
+<span class="n">language</span><span class="p">:</span> <span class="n">python</span>
+<span class="n">branches</span><span class="p">:</span>
+  <span class="n">only</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">master</span>
+<span class="n">install</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
+<span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">markdown</span>
+<span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+<span class="nn">script</span><span class="p">:</span>
+<span class="o">-</span> <span class="s1">&#39;make github 2&gt; /dev/null&#39;</span>
+<span class="n">env</span><span class="p">:</span>
+  <span class="k">global</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">GH_TOKEN</span><span class="p">:</span> <span class="mi">9</span><span class="n">c898c9b98a877663e4a556989b</span>
+</pre></div>
+
+
+<p>但是，如果这样做的话，你的person_access_token就会被放进代码库中，会被任何人获取到，存在安全隐患。</p>
+<p>所以我们需要对它进行加密。。</p>
+<p>还好travis-ci预料到了这样的需求发生，它允许你拥有一些不能被别人知道的变量。</p>
+<p>你可以通过命令来创建它</p>
+<div class="highlight"><pre><span></span>cd /path/to/your/repo
+travis encrypt GH_TOKEN=9c898c9b98a877663e4a556989b
+</pre></div>
+
+
+<p>之后travis会给你一长串字符串，这个字符串是通过RSA加密过的，private key是保存在travis服务器上，普通人只能拿到public key，所以相对还是比较安全的。</p>
+<p>然后，我们把这个key加入<code>.travis.yml</code>中</p>
+<div class="highlight"><pre><span></span><span class="n">env</span><span class="o">:</span>
+  <span class="n">global</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">secure</span><span class="o">:</span> <span class="n">xUPoc</span><span class="o">+</span><span class="n">miOMcmsgKu2kpQM5Sl5pRxN1HaNoXK20Iog4ynVo0DRA9gBkvS8Q</span><span class="sr">/H15+ddDqu+fNMblCw2jIbXtUQmaciS1e+Gx1+vtBnD8f2i9JFwwo8P8sdTRX6ucvQuZBRssmrId6qY6qsz+iTri+kG1P5wzNasvMWpvPWgexK7enhDeoaGPeDwLT6KLZmXdsIuGCM1X7kGnVhMYi8pom0dDN4HFYrtzp/PidYFA3xsAOjyjqfgeMdZ1Oxot3281ilvAvY8DDhJ3ZNhkiNFBFAYN2MmQxOLQj4d15puJ8tAr4bKLmxOJkHBP0CE621bDZcLkTkk82TtgJyq3KZWv503ni6LFQ0qmJGEICSYfP/5lWKF/6BQzTBjOoeKCunZKqP1KVgUkXDgAqwo8yv+f3ZTOxD0xoysOnnE+q8QBWlxojWRFx01Ihg/G1kYpIgm+HXzY4huqIXST3Vu1Me4UISeGX/lSXeJ3/kjbCqNRMdeybag7nLSrKudnr/A+6R4gbQFOks6FjEl7HWCX/jSGcNSupIJCd+dhYlsz0KxhYxIuWDmRphGS0mM4z58T71GdL0YNZ40q8NG7fSGGF2j++u8KqtvLIXSj6RpIE6I3qum7iJkZhYEBAFpzQjlT6lfHZg13PTZljk+juW/zm2kDYat5U/10djOUru1jQ/</span><span class="n">B256xaI</span><span class="o">=</span>
+</pre></div>
+
+
+<p>记得删除之前的GH_TOKEN。。。</p>
+<p>然后<code>git push origin master</code>，并在travis中完成设置，你的博客就可以由travis来build啦。。</p>
+<h4>第五步 使用Coding为国内分流</h4>
+<p>因为Coding在国内也提供相类似的服务，并且在国内拥有比较好的访问速度。</p>
+<p>所以我们在push build完的html的时候，可以同时push至两个地方（github以及coding）。</p>
+<p>再通过dnspod来区分国内外的流量来做分流。</p>
+<p>push至coding的方法与github比较相似，在这里就不展开了。如果有问题可以看我blog的repo来参考。。</p>
+<h4>总结</h4>
+<p>我已经写的很详细了。。好累啊</p>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: Fri 18 March 2016</p>
+    <p>Category: <a href="//oreki.moe/category/uselessskill.html">UselessSkill</a>
+    </p>
+  </div>
+
+  <div id="article_comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_identifier = "shou-ba-shou-jiao-ni-ru-he-lan-yong-github-travis-ci-codingdeng-zi-yuan-lai-jian-li-yi-ge-bo-ke.html";
+        (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = '//orekimoe.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+         })();
+    </script>
+  </div>
+
+</article>
+
+
+    <div id="ending_message">
+      <p>&copy; yanqing.wang. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. </p>
+    </div>
+  </main>
+  <script src="//oreki.moe/theme/js/main.js" type="text/javascript"></script>
+</body>
+</html>

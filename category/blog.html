@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="//oreki.moe/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="yanqing.wang">
+  <meta name="description" content="Posts and writings by yanqing.wang">
+
+
+
+  <title>
+    oreki.moe
+&ndash; Category: Blog  </title>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-75598333-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="//oreki.moe">
+	<img id="author_logo" src="" alt="logo">
+      </a>
+      <h2><a id="author_name" href="//oreki.moe"></a></h2>
+      <p id="author_tagline"></p>
+      <ul>
+        <li><a href="http://www.kyotoanimation.co.jp/kotenbu/" target="_blank">氷菓</a></li>
+        <li><a href="https://github.com/faith0811" target="_blank">Github</a></li>
+        <li><a href="https://twitter.com/wyq0811" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="//oreki.moe">Index</a> &brvbar; <a href="//oreki.moe/archives.html">Archives</a>
+&gt; Category: Blog
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="//oreki.moe/shi-shi-kan-pythondai-ma-kuai.html">试试看Python代码块</a></h3>
+  </div>
+  <div class="article_text">
+    <p>刚才调整了一下代码块的显示，现在决定写一点Python测试代码来试试看效果</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Complex example which is a combination of the rr* examples from the zguide.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">gevent.monkey</span> <span class="kn">import</span> <span class="n">patch_all</span>
+<span class="n">patch_all</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">gevent</span> <span class="kn">import</span> <span class="n">spawn</span>
+<span class="kn">import</span> <span class="nn">zmq.green</span> <span class="kn">as</span> <span class="nn">zmq</span>
+
+<span class="c1"># server</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REP</span><span class="p">)</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;tcp://localhost:5560&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">serve</span><span class="p">(</span><span class="n">socket</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">message …</span></pre></div>
+  </div>
+</article>
+<hr />
+<article>
+  <div class="article_title">
+    <h3><a href="//oreki.moe/a-ya-zhe-ge-dai-ma-kuai-hao-nan-kan.html">啊呀这个代码块好难看</a></h3>
+  </div>
+  <div class="article_text">
+    <p>我发现这个主题的代码块有点难看，还是github的好看一点。。看看到时候有空抄一把。</p>
+  </div>
+</article>
+
+<footer>
+<div id="paginator">
+
+</div>
+</footer>
+
+    <div id="ending_message">
+      <p>&copy; yanqing.wang. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. </p>
+    </div>
+  </main>
+  <script src="//oreki.moe/theme/js/main.js" type="text/javascript"></script>
+</body>
+</html>

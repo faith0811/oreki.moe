@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="//oreki.moe/theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="//oreki.moe/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="yanqing.wang">
+  <meta name="description" content="Posts and writings by yanqing.wang">
+
+
+<meta name="keywords" content="">
+
+  <title>
+    oreki.moe
+&ndash; 手把手教你如何使用自己的路由器拨号上网+IPTV4K（上海电信）  </title>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-75598333-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body>
+  <aside>
+    <div id="user_meta">
+      <a href="//oreki.moe">
+	<img id="author_logo" src="" alt="logo">
+      </a>
+      <h2><a id="author_name" href="//oreki.moe"></a></h2>
+      <p id="author_tagline"></p>
+      <ul>
+        <li><a href="http://www.kyotoanimation.co.jp/kotenbu/" target="_blank">氷菓</a></li>
+        <li><a href="https://github.com/faith0811" target="_blank">Github</a></li>
+        <li><a href="https://twitter.com/wyq0811" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <p>
+      <a href="//oreki.moe">Index</a> &brvbar; <a href="//oreki.moe/archives.html">Archives</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article_title">
+    <h3><a href="//oreki.moe/shou-ba-shou-jiao-ni-ru-he-shi-yong-zi-ji-de-lu-you-qi-bo-hao-shang-wang-iptv4kshang-hai-dian-xin.html">手把手教你如何使用自己的路由器拨号上网+IPTV4K（上海电信）</a></h3>
+  </div>
+  <div class="article_text">
+    <p>其实电信的路由器已经很好啦，如果没有特殊的需求的话，用用他送的就蛮好了，没必要再搞了。
+但是我想要一些来自路由器的服务，用他的智障系统显然是不行的，所以就要用自己搞了。</p>
+<p>另外也可以直接从电信路由器里插一根线到你的路由器，自己路由器wan端设置dhcp接收路由器分配的ip，自己的lan端再由自己分发ip，这样使用也是没有问题的。</p>
+<p>不过对我来说，这样也是不行的，因为我的房间到客厅的光猫只有一根线，这一根线不仅要承载iptv4k，还要用来负责给一大票设备上网，
+而通过一次dhcp转发之后，再接到iptv4k就没有办法连上电信的专网了。</p>
+<p>所以不得已只能用自己的路由器来拨号。记录下这篇文章是为了以后路由器坏了或者电信又变了的时候拿出来作参考，
+因为是搞定了之后再来写的，所以没有再去验证过，不保证所有的内容都完全正确，不过思路是没问题的。</p>
+<h4>准备材料</h4>
+<ul>
+<li>水星4530R</li>
+<li>若干网线</li>
+</ul>
+<h4>准备软件</h4>
+<ul>
+<li>ssh client(required)</li>
+<li>wireshark(optional)</li>
+</ul>
+<h4>核心思路</h4>
+<p>让自己的路由器和光猫桥接，让自己的路由器拨号，在这基础上再在dhcp包中添加iptv必须的dhcp option 125，再划分出iptv需要的85和51vlan就搞定了。</p>
+<h4>To be continued</h4>
+<p>写累了</p>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: Thu 05 January 2017</p>
+    <p>Category: <a href="//oreki.moe/category/uselessskill.html">UselessSkill</a>
+    </p>
+  </div>
+
+  <div id="article_comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_identifier = "shou-ba-shou-jiao-ni-ru-he-shi-yong-zi-ji-de-lu-you-qi-bo-hao-shang-wang-iptv4kshang-hai-dian-xin.html";
+        (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = '//orekimoe.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+         })();
+    </script>
+  </div>
+
+</article>
+
+
+    <div id="ending_message">
+      <p>&copy; yanqing.wang. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. </p>
+    </div>
+  </main>
+  <script src="//oreki.moe/theme/js/main.js" type="text/javascript"></script>
+</body>
+</html>
